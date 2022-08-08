@@ -1,0 +1,12 @@
+<div class="header-container">
+    <div class="menu-items-left">
+        <button>All Tours</button>
+    </div>
+    <div class="menu-items-right">
+        <span class="head-profile" [routerLink]="['accountSetting']">
+            <img class="head-image" src="" />
+        </span>
+        <button *ngIf="authService.userDetails" (click)="logOut()">Log out</button>
+        <button *ngIf="!authService.userDetails">Sign up</button>
+    </div>
+</div>    

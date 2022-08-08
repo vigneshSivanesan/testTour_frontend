@@ -1,0 +1,50 @@
+<div class="tour-main">
+    <div *ngFor="let tour of tourList">
+    <div class="tour-card">
+        <div class="card-img">
+            <div class="overlay"></div>
+            <span class="tour-title">{{tour?.name}}</span>
+            <img class="tour-image" src="../../assets/img/thoovanam-waterfalls-1-1016.jpg"/> 
+        </div>
+        <div class="card-body">
+            <div class="tour-info">
+                <span class="bold">{{tour?.difficulty}} {{tour?.duration}}-Day Tour</span>
+                <span>{{tour?.description}}</span>
+            </div>
+            <div class="tour-details">
+                <div class="tour-content">
+                    <span class="glyphicon glyphicon-map-marker tour-icon"></span> 
+                    <span>{{tour?.name}}</span> 
+                </div>
+                <div class="tour-content">
+                    <span class="glyphicon glyphicon-calendar tour-icon"></span>
+                    <span>{{tour?.createdAt | date:'dd/mm/yy'}}</span> 
+                </div>
+                 
+            </div>
+            <div class="tour-details">
+                <div class="tour-content">
+                    <i class="fa fa-flag tour-icon" aria-hidden="true"></i>
+                    <span>{{tour?.location?.length}} Stops</span> 
+                </div>
+                <div class="tour-content">
+                    <i class="fa fa-user tour-icon" aria-hidden="true"></i>
+                    <span>{{tour?.maxMemberSize}} People</span> 
+                </div>
+                 
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="tour-footer">
+                <div class="tour-footer-info">
+                    <span>{{tour?.price}} Perperson</span> 
+                    <span>{{tour?.ratingAverage}} rating</span> 
+                </div>
+                <div class="details-button" [routerLink] = "['/tourDetails']" [queryParams]="{tourId: tour._id}">
+                    <button>Details</button>
+                </div>                
+            </div>
+        </div>
+    </div>   
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="main-container">
+    <div class="sub-container">
+        <h1>YOUR ACCOUNT SETTINGS</h1>
+        <form [formGroup]="profileForm" class="profile-form">
+        <div class="profile-input">
+            <label>Name</label>
+            <input class="input" type="text" formControlName="name" name="profileName" />
+        </div>
+        <div class="profile-input">
+            <label>Email</label>
+            <input class="input" type="email" formControlName="email" name="email" />
+        </div>
+        <div class="profile-preview profile-input">
+            <img class="preview" src="" />
+            <input class="form-control" type="file" name="picture" hidden #inputFile />
+        </div>
+        <div class="save-btn">
+            <button (click)="saveProfile()"> save </button>
+        </div>
+        </form>
+  
+    </div>
+   
+</div>

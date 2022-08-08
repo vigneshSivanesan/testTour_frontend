@@ -1,0 +1,155 @@
+<div class="main">
+    <div class="header">
+        <img class="header-imgbackground" src="../../../assets/img/thoovanam-waterfalls cover.jpg" />
+        <div class="overlay"></div>
+        <div class="header-content">
+            <div class="header-title">
+                <span class="title-content">
+                    Love Tour
+                </span>
+                <span class="title-content">
+                    {{tourDetails?.name}}
+                </span>
+            </div>
+            <div class="header-locate">
+                <i class="fa fa-clock-o tour-icon"></i>
+                <span>{{tourDetails?.duration}} Days</span>
+                <span class="glyphicon glyphicon-map-marker tour-icon"></span>
+                <span>Munnar,kerala</span>
+            </div>
+        </div>
+    </div>
+    <div class="details-content">
+        <div class="detail-info">
+            <div class="quick-facts">
+                <h4 class="title">Quick facts</h4>
+                <div class="info-contain">
+                    <span class="glyphicon glyphicon-calendar tour-icon"></span>
+                    <span>Next Date</span>
+                    <span>{{tourDetails?.createdAt}}</span>
+                </div>
+                <div class="info-contain">
+                    <span class="glyphicon glyphicon-calendar tour-icon"></span>
+                    <span>Difficulty</span>
+                    <span>{{tourDetails?.difficulty}}</span>
+                </div>
+                <div class="info-contain">
+                    <span class="glyphicon glyphicon-calendar tour-icon"></span>
+                    <span>Participant</span>
+                    <span>{{tourDetails?.maxMemberSize}} people</span>
+                </div>
+                <div class="info-contain">
+                    <span class="glyphicon glyphicon-calendar tour-icon"></span>
+                    <span>Rating</span>
+                    <span>{{tourDetails?.ratingAverage}}/5</span>
+                </div>
+
+            </div>
+            <div class="tour-guides">
+                <h4 class="title">Tour Guides</h4>
+                <div class="guide-info">
+                    <span class="profile-img">
+                        <img src="" />
+                    </span>
+                    <span>Lead Guide</span>
+                    <span>steve garger</span>
+                </div>
+            </div>
+        </div>
+        <div class="description">
+            <div>
+                <h4 class="title">
+                    About the tour package
+                </h4>
+                <span>
+                    The Beas River is one of the five major rivers in North India, giving Punjab its name. Beas Kund is
+                    believed to be the spot where the river originates. It is a popular trekking destination thanks to
+                    the lush green grasslands and the panoramic view offered by the Pir Panjal Range. The place also has
+                    historical significance – it is believed to be where Sage Vyas took a bath every day.
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="slope-image">
+        <span class="slope-content">
+            <img class="slope-img" src="../../../assets/img/3-nature-wallpaper-mountain.jpg" alt="">
+        </span>
+        <span class="slope-content">
+            <img class="slope-img" src="../../../assets/img/360_F_285144486_9KAaLb72L4V0I7WSpvcQaEK4NnETDjKD.jpg"
+                alt="">
+        </span>
+        <span class="slope-content">
+            <img class="slope-img" src="../../../assets/img/537079.jpg" alt="">
+        </span>
+    </div>
+
+    <div class="map-location">
+        <agm-map class="agm-map"
+        [latitude]="lat"
+        [longitude]="lng"
+        [zoom]="zoom"
+        [disableDefaultUI]="false"
+    
+      >
+        <agm-marker
+          *ngFor="let m of markers; let i = index"
+          [latitude]="m.lat"
+          [longitude]="m.lng"
+          [markerDraggable]="m.draggable"
+          [iconUrl]="m.iconUrl"
+          [animation]="'BOUNCE'"
+        >
+        <agm-info-window *ngIf="m?.label">
+            <div class="tag-div">
+              <span class="tag-title"><strong>Place</strong></span>
+            </div>
+            <div class="tag-detail-div">
+              <p class="tag-detail">{{m?.label}}</p>
+            </div>
+          </agm-info-window>
+        </agm-marker>
+      </agm-map>
+      </div>
+
+    <div class="guide">
+        <div class="set-guide">
+            <div class="guide-profile" *ngFor="let guide of guides">
+                <div class="profile-info">
+                    <div class="profile-head">
+                        <div class="split-head">
+                            <span class="guide-image">
+                                <img />
+                            </span>
+                            <span>{{guide['firstName']}} {{guide['lastName']}}</span>
+                        </div>
+                    </div>
+                    <div class="guide-profile-body">
+                        <div class="guide-des">
+                            <span>one that leads or directs another's way needed a guide for the safari. b : a person
+                                who exhibits and explains points. </span>
+                        </div>
+                        <div class="guide-rating">
+                            <div>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tour-book">
+        <div class="book-tour-info">
+            <div class="book-tour-body">
+             <span>What are you waiting for?</span>
+             <button [routerLink]="['/booking']" [queryParams]="{tourId: tourId}">Book Now</button>
+            </div>
+         </div>
+    </div>
+ 
+</div>

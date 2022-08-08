@@ -1,1 +1,89 @@
 /* You can add global styles to this file, and also import other style files */
+// @import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url(./assets/fonts/StintUltraCondensed-Regular.woff) format("woff");
+    
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    overflow: auto;
+    line-height: 1.5;
+    background-color: whitesmoke
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+div {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+}
+
+button{
+    height: 30px;
+    width: 100px;
+    text-align: center;
+    border-radius: 40px;
+    background-color: #495C83;
+    color: aliceblue;
+    border-color: aliceblue;
+    border: none;
+    
+    &:hover {
+        border: 2px solid;
+        cursor: pointer;
+    }
+}
+.tour-icon{
+    color: #8ebf8e;
+}
+
+::ng-deep {
+    // *::-webkit-scrollbar {
+    //   background-color: transparent;
+    //   width: 0;
+    //   height: 0;
+    // }
+
+    *::-webkit-scrollbar {
+      background-color: #f6f6f6;
+      width: 4px;
+      height: 8px;
+    }
+
+    *::-webkit-scrollbar-track {
+      transition: all 0.3s ease;
+      background-color: #f6f6f6;
+      width: 4px;
+      height: 4px;
+    }
+
+    *::-webkit-scrollbar-track:hover {
+      transition: all 0.3s ease;
+      background-color: #f6f6f6;
+    }
+
+    *::-webkit-scrollbar-thumb {
+      transition: all 0.3s ease;
+      background-color: rgba(133, 133, 141, 0.8);
+      border-radius: 10px;
+
+    }
+
+    *::-webkit-scrollbar-thumb:hover {
+      transition: all 0.3s ease;
+      background-color: darken(#d8dce6, 3%);
+    }
+}
+

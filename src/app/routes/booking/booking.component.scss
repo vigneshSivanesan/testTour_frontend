@@ -1,0 +1,45 @@
+.pay-container{
+    width: 50%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    flex-direction: column;
+}
+
+.main-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form{
+    height: 50%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+.input-field{
+    display: flex;
+    flex-direction: column;
+}
+
+h1{
+    font-weight: bold;
+    background: linear-gradient(#00e752, #169170);
+    -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            font-size: 15px;
+    }
+
+    .label{
+        background: linear-gradient(#00e752, #169170);
+        -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+                display: flex
+    }

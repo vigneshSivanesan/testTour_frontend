@@ -1,0 +1,25 @@
+<div class="login-main">
+    <img class="login-img" src="../../../../assets/img/thumb-1920-821899.jpg"/>
+     <div class="login-card">
+        <div class="title">
+            <h1>LOG INTO YOUR ACCOUNT</h1>
+        </div>
+        <div class="login-body">
+           <form [formGroup]="loginForm">
+            <div class="form-body">
+               <div class="form-group">
+                 <label class="label">Email:</label>
+                 <input type="email" name="email" formControlName="email" placeholder="Enter email" class="input"/>
+               </div>
+               <div class="form-group">
+                <label class="label">Password:</label>
+                <input type="password" name="password" formControlName="password" placeholder="Enter password" class="input"/>
+              </div>
+              <div class="form-submit-button">
+               <button class="login-button" (click)="login()">Login</button>
+              </div>
+            </div>
+           </form>
+        </div>
+     </div>
+</div>

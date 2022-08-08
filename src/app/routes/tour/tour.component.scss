@@ -1,0 +1,128 @@
+.tour-main{
+    display: flex;
+    // gap: 5%;
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    overflow: auto;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+
+.tour-card{
+    height: 400px;
+    width: 250px;
+    background-color: white;
+    // margin-left: 8rem;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    
+}
+.card-footer{
+    background-color: #80808047;
+    height: 20%;
+}
+.card-body{
+    margin-top: auto;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    padding: 10px;
+}
+span{
+font-size: inherit;
+}
+.tour-info{
+    font-size: inherit;
+    display: flex;
+    flex-direction: column; 
+}
+
+.card-img{
+    height: 40%;
+    position: relative;
+}
+.tour-image {
+    height:100%;
+    width: 100%;
+    transition: .5s;
+}
+.tour-details{
+    padding-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+    
+
+.tour-icon{
+    color: #8ebf8e;
+}
+
+.tour-footer {
+    display: flex;
+    flex-direction: row;
+}
+.tour-content{
+    display: flex;
+    gap:5px;
+    font-size: inherit;
+    align-items: center;
+}
+
+.tour-footer-info{    
+display: flex;
+flex-direction: column;
+margin: 10px;
+}
+
+.details-button{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    padding: 20px;
+}
+button{
+    width: 80px;
+}
+.bold{
+    font-weight: bold;
+}
+.tour-title{
+    position: absolute;
+    order: solid 2px green;
+    background-color: #60a764;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bolder;
+    color: white;
+    opacity: 0.9;
+    bottom: 0;
+    right: 0;
+    margin: 20px;
+    z-index: 1;
+    transition: .5s;
+
+}
+.overlay{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.6;
+    background-color:#60a764;
+    transition: .5s;
+    z-index: 1;
+    &:hover ~.tour-image, &:hover ~ .tour-title, &:hover {
+        transform: scale(1.05);
+        
+    }
+}
