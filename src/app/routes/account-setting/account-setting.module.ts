@@ -6,13 +6,15 @@ import { AccountSettingComponent } from './account-setting.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ChatComponent } from './chat/chat.component';
 
 
 @NgModule({
   declarations: [
     AccountSettingComponent,
     ProfileComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    ChatComponent
   ],
   imports: [
     CommonModule,
