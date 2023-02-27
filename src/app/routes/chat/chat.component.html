@@ -1,0 +1,55 @@
+<div class="whole-container">
+  <div class="chat-container">
+    <div class="chat-header">
+      <div class="chat-header-left">
+        <div class="chat-header-content">
+          <div class="chat-header-title">
+            Chat Messanger
+          </div>
+
+        </div>
+        <div class="header-down">
+          <div class="header-camera">
+            <i class="fa fa-camera" aria-hidden="true"></i>
+          </div>
+          <div class="header-chat" routerLink="inbox">
+            <span>Chats</span>
+          </div>
+          <div class="header-status">
+            <span>Status</span>
+          </div>
+          <div class="header-calls">
+            <span>Calls</span>
+          </div>
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="current-chat">
+          <div class="chat-avatar">
+            <img class="profile-pic"
+              src="https://vigneshtourbucket.s3.ap-south-1.amazonaws.com/3-nature-wallpaper-mountain.jpg" />
+          </div>
+          <div class="chat-space">
+            <div class="name">{{chatName}}</div>
+            <div class="last-chat">online</div>
+          </div>
+        </div>
+        <div class="header-left">
+          <div class="chat-header-search" (click)="openVideo()">
+            <i class="fa fa-video-camera" aria-hidden="true"></i>
+          </div>
+          <div class="chat-header-search">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </div>
+          <div class="chat-header-icon" (click)="contactListPopup()">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="chat-body">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

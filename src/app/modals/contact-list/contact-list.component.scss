@@ -1,0 +1,82 @@
+::ng-deep{
+    .modal-backdrop
+{
+  opacity: 0.5 !important;
+}
+.modal
+{
+  opacity: 1 !important;
+}
+.contactList-popup{
+    max-height: 600px !important;
+    width: 400px !important;
+    left: 50%;
+    top:40%;
+    margin-left:-200px;   
+    margin-top:-200px;
+    overflow-y: hidden !important;
+}
+.list-contact{
+    height:90%;
+    width:100%;
+    overflow-y: auto;
+}
+.modal-dialog{
+    top:25% !important;
+    margin: 0%;
+    padding: 0%;
+    height:100%;
+    width: 100%;
+}
+.modal-content{
+    height:100%;
+    width: 100%;
+}
+}
+
+
+.contact-content{
+    width:100%;
+    height:100%;
+}
+.contact-list-container{
+    display: grid;
+}
+.contact-list-data{
+    display: flex;
+    padding: 20px;
+}
+.contact-profile{
+    width: 50px;
+    height: 50px;
+    background-color: darkgrey;
+    border-radius: 27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.img-profile{
+    width: 43px;
+    border-radius: 23px;
+}
+.contact-name{
+    padding-left: 10px;
+}
+.title{
+    height:10%;
+    width:100%;
+    background-color: cadetblue;
+    color: white;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+}
+.header-title{
+    width:90%;
+}
+.close{
+    margin: auto;
+    color: white;
+}

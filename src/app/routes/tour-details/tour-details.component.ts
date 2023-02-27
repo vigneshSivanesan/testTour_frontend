@@ -60,7 +60,7 @@ loadMarker() {
         iconUrl: "https://img.icons8.com/material-outlined/2x/marker.png"
       },
     );
-        }
+        } 
     });
   }
 }

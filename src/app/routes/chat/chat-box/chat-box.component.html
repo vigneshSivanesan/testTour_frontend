@@ -1,0 +1,40 @@
+<div class="chatbox-content">
+    <div class="chat-message" *ngFor="let item of chatHistory">
+        <div class="message-receiver" *ngIf="item?.senderId?._id !== userDetails._id">
+            <div class="message"> {{item.content}}</div>
+            <div class="message-time"> {{item.createdAt | date:'hh:mm'}}</div>
+        </div>
+        <div class="message-right" *ngIf="item?.senderId?._id === userDetails._id">
+            <div class="message-sender">
+                <div class="message"> {{item.content}}</div>
+                <div class="message-time"> {{item.createdAt | date:'hh:mm'}} </div>
+            </div>
+        </div>
+    </div>
+</div>
+<p *ngIf="isTyping" class="typing">Typing.....</p>
+<div class="chat-footer">
+    
+<div class="footer-content">
+    <div class="smiley">
+        <i class="fa fa-smile-o" aria-hidden="true"></i>
+    </div>
+    <div class="text-input">
+<input class="chat-input" (focusout)="emitTyping('stopTyping')" (click)="emitTyping('typing')" [(ngModel)]="message"type="text"
+/>
+    </div>
+    <div class="voice-speaker"*ngIf="!message">
+        <div class="media" (click)="uploadMedia()">
+            <i class="fa fa-paperclip" aria-hidden="true"></i>
+            <input type="file" name="media" hidden    #inputFile #upFile />
+        </div>
+  
+        <i class="fa fa-microphone" aria-hidden="true"></i>
+    </div>
+
+    <div class="voice-speaker"*ngIf="message" (click)="sendMessage()">
+        <i class="fa fa-paper-plane" aria-hidden="true"></i>
+    </div>
+
+</div>
+</div>

@@ -33,7 +33,13 @@ const routes: Routes = [
     path:'booking',
     loadChildren:()=> import('../app/routes/booking/booking.module').then(m=> m.BookingModule),
     canActivate:[AuthguardGuard]
+  },
+  {
+    path:'chats',
+    loadChildren:()=> import('../app/routes/chat/chat.module').then(m=> m.ChatModule),
+    canActivate:[AuthguardGuard]
   }
+
 ];
 
 @NgModule({

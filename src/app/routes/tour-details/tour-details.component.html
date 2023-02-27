@@ -88,9 +88,7 @@
         [latitude]="lat"
         [longitude]="lng"
         [zoom]="zoom"
-        [disableDefaultUI]="false"
-    
-      >
+        [disableDefaultUI]="false">
         <agm-marker
           *ngFor="let m of markers; let i = index"
           [latitude]="m.lat"

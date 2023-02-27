@@ -6,6 +6,7 @@
         <span class="head-profile" [routerLink]="['accountSetting']">
             <img class="head-image" src="" />
         </span>
+        <button *ngIf="authService.userDetails" [routerLink]="['chats']">Chat</button>
         <button *ngIf="authService.userDetails" (click)="logOut()">Log out</button>
         <button *ngIf="!authService.userDetails">Sign up</button>
     </div>

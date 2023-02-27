@@ -1,0 +1,21 @@
+<div class="contact-content">
+    <div class="title">
+       <h1 class="header-title">ALL Contacts</h1> 
+        <div class="close" (click)="close()"><i class="fa fa-window-close" aria-hidden="true"></i></div>
+    </div>
+    
+    <div class="list-contact">
+        <div class="contact-list-container" *ngFor="let contact of userList">
+            <div class="contact-list-data" (click)="createChat(contact)">
+                <div class="contact-profile">
+                    <img class="img-profile"
+                        src="../../../assets/img/depositphotos_133354456-stock-illustration-default-placeholder-profile-icon.jpg" />
+                </div>
+                <div class="contact-name">
+                    <h5>{{contact?.name}}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -11,5 +11,10 @@ export const API = {
     userUpdate:  BASE_ENDPOINT_URL + 'user/update',
     updatePassword:  BASE_ENDPOINT_URL + 'updatePassword',
     bookingTour: BASE_ENDPOINT_URL + 'tour/payment',
-    createBooking: BASE_ENDPOINT_URL + 'createBookings'
+    createBooking: BASE_ENDPOINT_URL + 'createBookings',
+    userList: BASE_ENDPOINT_URL + 'user/list',
+    createChat: BASE_ENDPOINT_URL + 'createChat',
+    fetchUserChat: BASE_ENDPOINT_URL + 'fetchUserChat',
+    saveMessage: BASE_ENDPOINT_URL + 'saveMessage',
+    fetchChatList: BASE_ENDPOINT_URL + 'fetchChat',
 }

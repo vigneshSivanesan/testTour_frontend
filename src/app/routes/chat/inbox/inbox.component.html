@@ -1,0 +1,27 @@
+<div class="chat-content">
+    <div class="chat-container">
+        <!-- <div class="add-user">
+        <input class="add-user-input" [(ngModel)]="userName" type="text"/>
+        <button class="add-btn" (click)="addUser()">AddUser</button>
+    </div> -->
+        <div class="chat-single" *ngFor="let chat of chatList">
+            <div class="chat-avatar">
+                <img class="profile-pic"
+                    src="https://vigneshtourbucket.s3.ap-south-1.amazonaws.com/3-nature-wallpaper-mountain.jpg" />
+            </div>
+            <div class="chat-space" (click)="loadChat(chat)" *ngIf="chat?.isGroupChat">
+                <div class="name">{{chat?.chatName}}</div>
+                <div class="last-chat">compeleted daa</div>
+            </div>
+            <div *ngIf="!chat?.isGroupChat">
+                <div class="chat-space" (click)="loadChat(chat)" *ngFor="let user of chat.users">
+                    <div class="name" *ngIf="user._id !== userDetails._id">{{user?.name}}</div>
+                    <div class="last-chat" *ngIf="user._id !== userDetails._id">{{chat?.latestMessage?.content}}</div>
+                </div>
+            </div>
+    
+            <div class="chat-time">{{chat?.latestMessage?.createdAt|date:'hh:mm'}}</div>
+        </div>
+    </div>
+    <app-chat-box [userName]="this.userName" [clientId]="this.clientId" [chatId]="this.chatId" [chatHistory]="this.chatHistory" class="messag-box"></app-chat-box>
+</div>

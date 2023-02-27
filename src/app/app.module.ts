@@ -18,17 +18,26 @@ import { AuthguardGuard } from '../app/utils/authguard.guard';
 import { AccountSettingModule } from './routes/account-setting/account-setting.module';
 import { ProfileSettingComponent } from './routes/profile-setting/profile-setting.component';
 import { ProfileSettingModule } from './routes/profile-setting/profile-setting.module';
-import { NgxStripeModule } from 'ngx-stripe';
+// import { NgxStripeModule } from 'ngx-stripe';
 import { BookingComponent } from './routes/booking/booking.component';
-
+import { ChatComponent } from './routes/chat/chat.component';
+import { ModalsComponent } from './modals/modals.component';
+import { ModalsModule } from './modals/modals.module';
+import { MAT_DIALOG_DATA,MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {NgbActiveModal, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ChatComponent,
+    ModalsComponent,
+    
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule,
     TourModule,
     TourDetailsModule,
@@ -37,9 +46,13 @@ import { BookingComponent } from './routes/booking/booking.component';
     LoginModule,
     AppRoutingModule,
     HttpClientModule,
-    NgxStripeModule.forRoot('pk_test_51LSO62SAqQhGLLsYBXh1N1ctCHX2AI2qKzUHtdBU77optxXz9ngyTnQ35yqn2nTv8jQ1CJALQiBfe5NWbjjwdWj3003Di80MmE'),
+    ModalsModule,
+    MatDialogModule
+    // NgxStripeModule.forRoot('pk_test_51LSO62SAqQhGLLsYBXh1N1ctCHX2AI2qKzUHtdBU77optxXz9ngyTnQ35yqn2nTv8jQ1CJALQiBfe5NWbjjwdWj3003Di80MmE'),
   ],
-  providers: [ AuthguardGuard,{
+  providers: [ NgbActiveModal, NgbModal, AuthguardGuard,{ provide: MatDialogRef, useValue: {} },
+    { provide: MAT_DIALOG_DATA, useValue: [] },
+    {
     provide: HTTP_INTERCEPTORS,
     useClass: TokeninterceptorInterceptor,
     multi: true

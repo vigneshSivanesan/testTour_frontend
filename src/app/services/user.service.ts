@@ -16,6 +16,10 @@ export class UserService {
     return this.http.get(API.user + '/' + userId );
    }
 
+   getUserList(search:any): Observable<any>{
+    return this.http.get(API.userList + '/'+ search);
+   }
+
    userUpdate(userDetails: any): Observable<any> {
     return this.http.put(API.userUpdate, userDetails);
    }
